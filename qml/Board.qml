@@ -22,7 +22,7 @@ Rectangle {
 
         anchors.fill: parent
 
-
+        // ChessBoard
         Repeater {
             model: 8 * 8
 
@@ -37,20 +37,6 @@ Rectangle {
                         "#8B4513";
                     else
                         "#FFE4B5";
-                }
-                MouseArea {
-                    anchors.fill: parent
-
-                    MessageDialog {
-                        id: msgIndex
-                        title: "Click!"
-                        text: "You clicked on "
-                        onAccepted: visible = false
-                    }
-
-                    onClicked: {
-                        msgIndex.visible = true
-                    }
                 }
             }
         }

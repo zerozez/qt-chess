@@ -2,22 +2,70 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.2
 
+import com.znocpmp.chess 1.0
 
 ApplicationWindow {
-    title: "Qt Chess"
+    title: "Title"
     width: 640
     height: 480
     visible: true
 
-    statusBar: StatusBar {
-        RowLayout {
-            Label { text: "Status bar here"}
-        }
-    }
-
-    RowLayout{
+    ColumnLayout {
         anchors.fill: parent
-        spacing: 2
+
+        Rectangle {
+            height: 30
+            Layout.fillWidth: true
+
+            RowLayout {
+                anchors.fill: parent
+
+                ToolButton {
+                    id: startButton
+                    Layout.fillHeight: true
+
+                    height: parent.height
+                    width: height
+
+                    text: "Start"
+
+                    onClicked: {
+                        console.log("Setup board figures " + parent.width)
+                        GameEngine.setupBoard()
+
+                        figureasd = GameEngine.figures
+                        console.log("WE have " + figureasd.length)
+                    }
+                }
+
+                ToolButton {
+                    id: loadButton
+                    Layout.fillHeight: true
+
+                    height: parent.height
+                    width: height
+
+                    text: "Load"
+
+                    onClicked: {
+                        console.log("Clicked load button")
+                        GameEngine.load
+                    }
+                }
+
+                ToolButton {
+                    id: exitButton
+                    Layout.fillHeight: true
+
+                    height: parent.height
+                    width: height
+
+                    text: "Exit"
+
+                    onClicked: Qt.quit()
+                }
+            }
+        }
 
         Board {
             id: board1
@@ -28,14 +76,6 @@ ApplicationWindow {
             anchors.leftMargin: 5
             anchors.bottomMargin: 5
         }
-
-//        History {
-//            id: history1
-//            Layout.minimumWidth: 200
-//            Layout.fillHeight: true
-//        }
     }
-
-
 }
 

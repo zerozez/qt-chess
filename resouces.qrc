@@ -2,6 +2,8 @@
     <qresource prefix="/qt-chess">
         <file>qml/Board.qml</file>
         <file>qml/Window.qml</file>
+        <file>qml/ChessFigure.qml</file>
+        <file>qml/StepCase.qml</file>
     </qresource>
     <qresource prefix="/qt-chess/img">
         <file>images/c_bb.svg</file>
