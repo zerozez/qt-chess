@@ -13,7 +13,7 @@
 GameEngine::GameEngine(QObject *parent)
     :QObject(parent)
 {
-    qmlRegisterType<FigureIntf>("com.znocpmp.chess", 1, 0, "Figure");
+    qmlRegisterUncreatableType<FigureIntf>("com.znocpmp.chess", 1, 0, "Figure", "");
 }
 
 GameEngine::~GameEngine()

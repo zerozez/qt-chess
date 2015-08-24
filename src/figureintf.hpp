@@ -17,6 +17,7 @@ class FigureIntf : public QObject
     Q_OBJECT
 
     Q_PROPERTY(Color Side MEMBER m_color)
+    Q_PROPERTY(QString imagePath READ imagePath)
     Q_PROPERTY(int X MEMBER m_xPos)
     Q_PROPERTY(int Y MEMBER m_yPos)
 
@@ -38,7 +39,7 @@ public:
     FigureIntf(const uint x, const uint y, Color side, QObject *parent = 0);
     virtual ~FigureIntf();
 
-    Q_INVOKABLE virtual QString imagePath();
+    Q_INVOKABLE virtual QString imagePath() const = 0;
     Q_INVOKABLE virtual void    moveTo(const uint &x, const uint &y);
 
     /**
