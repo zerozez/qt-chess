@@ -19,6 +19,8 @@ class FigureIntf;
 class GameEngine : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QQmlListProperty<FigureIntf> figures READ figures)
+
 public:
     explicit GameEngine(QObject *parent = 0);
     virtual ~GameEngine();
