@@ -14,12 +14,14 @@ SOURCES    += \
         src/chess.cpp \
         src/gameengine.cc \
         src/figureintf.cc \
-        src/figureking.cc
+        src/figureking.cc \
+    src/chessmodel.cc
 
 HEADERS    += \
         src/gameengine.hpp \
         src/figureintf.hpp \
-        src/figureking.hpp
+        src/figureking.hpp \
+    src/chessmodel.hpp
 
 
 LIBS       +=

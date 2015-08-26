@@ -13,6 +13,8 @@ import QtQuick.Dialogs 1.2
 
 
 Rectangle {
+    id: gameField
+    property var figures
 
     Grid {
         id: chessGrid
@@ -40,6 +42,22 @@ Rectangle {
                 }
             }
         }
+    }
+
+    GridView {
+        id: chessFigures
+
+        anchors.fill: parent
+
+        model: gameField.figures
+
+        delegate: Item {
+                x: X - 1
+                y: Y - 1
+                Image {
+                    source: image
+                }
+            }
     }
 }
 

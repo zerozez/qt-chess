@@ -6,14 +6,17 @@
 #include <QFileDialog>
 
 #include <figureking.hpp>
+#include <chessmodel.hpp>
 
 #include "gameengine.hpp"
 
 
 GameEngine::GameEngine(QObject *parent)
     :QObject(parent)
+    ,m_figures(new ChessModel(this))
 {
     qmlRegisterUncreatableType<FigureIntf>("com.znocpmp.chess", 1, 0, "Figure", "");
+    qmlRegisterType<ChessModel>("com.znocpmp.chess", 1, 0, "ChessModel");
 }
 
 GameEngine::~GameEngine()
@@ -22,7 +25,13 @@ GameEngine::~GameEngine()
 
 void GameEngine::setupBoard()
 {
-    m_figures.insert(QPair<uint, uint>(5, 5), new FigureKing(5, 5, FigureIntf::White));
+    // Rookes
+
+    //bishops
+
+    //Kings
+    m_figures->addFigure(new FigureKing(8, 5, FigureIntf::Black));
+    m_figures->addFigure(new FigureKing(1, 5, FigureIntf::White));
 }
 
 void GameEngine::load()
@@ -35,19 +44,7 @@ void GameEngine::move()
 
 }
 
-QQmlListProperty<FigureIntf> GameEngine::figures()
+QObject *GameEngine::figures()
 {
-    QList<FigureIntf *> out;
-
-    foreach (FigureIntf *figure, m_figures) {
-        out.append(figure);
-    }
-
-    return QQmlListProperty<FigureIntf>(this, out);
-}
-
-FigureIntf *GameEngine::figureAt(const uint x, const uint y)
-{
-    return m_figures.value(QPair<uint, uint>(x, y),
-                           new FigureKing(0, 0, FigureIntf::White));
+    return m_figures;
 }

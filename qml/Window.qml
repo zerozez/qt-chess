@@ -32,9 +32,7 @@ ApplicationWindow {
                     onClicked: {
                         console.log("Setup board figures " + parent.width)
                         GameEngine.setupBoard()
-
-                        figureasd = GameEngine.figures
-                        console.log("WE have " + figureasd.length)
+                        board1.figures = GameEngine.figures()
                     }
                 }
 

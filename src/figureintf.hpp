@@ -50,17 +50,17 @@ public:
      */
     virtual QList<QPair<uint, uint> > moveList();
 
-Q_SIGNALS:
-    void moved(uint x, uint y);
-    void clicked();
-
-protected:
     uint X() const;
     void setX(const uint &x);
 
     void setY(const uint &y);
     uint Y() const;
 
+Q_SIGNALS:
+    void moved(uint x, uint y);
+    void clicked();
+
+protected:
     QString imgPrefix() const;
 
 private:
