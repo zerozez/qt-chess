@@ -51,7 +51,7 @@ uint FigureIntf::Y() const
 
 QString FigureIntf::imgPrefix() const
 {
-    QString out("qrc://qt-chess/img/images/");
+    QString out("qrc:/qt-chess/img/images/");
 
     if(m_color == White)
         out += "c_w";
