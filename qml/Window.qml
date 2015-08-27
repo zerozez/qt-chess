@@ -32,7 +32,6 @@ ApplicationWindow {
                     onClicked: {
                         console.log("Setup board figures " + parent.width)
                         GameEngine.setupBoard()
-                        board1.figures = GameEngine.figures()
                     }
                 }
 
@@ -73,7 +72,14 @@ ApplicationWindow {
             anchors.topMargin: 5
             anchors.leftMargin: 5
             anchors.bottomMargin: 5
+
+
         }
+        Component.onCompleted: {
+            console.log("Loaded")
+            board1.figures = GameEngine.figures()
+        }
+
     }
 }
 

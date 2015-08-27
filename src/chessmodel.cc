@@ -6,11 +6,7 @@
 #include <QDebug>
 
 ChessModel::ChessModel(QObject *parent)
-{
-
-}
-
-ChessModel::~ChessModel()
+    : QAbstractListModel(parent)
 {
 
 }
@@ -23,15 +19,17 @@ int ChessModel::rowCount(const QModelIndex &parent) const
 
 bool ChessModel::removeRows(int row, int count, const QModelIndex &parent)
 {
-    beginRemoveRows(parent, row, row + count);
+    if (count <= 0 || row < 0 || (row + count) > rowCount(parent))
+        return false;
 
-    int set = count;
+    beginRemoveRows(QModelIndex(), row, row + count - 1);
 
-    while(set > 0)
+
+    while(count > 0)
     {
         qDebug() << "Removing this " << row ;
         m_data.removeAt(row);
-        set--;
+        count--;
     }
 
     endRemoveRows();
@@ -74,9 +72,7 @@ QVariant ChessModel::data(const QModelIndex &index, int role) const
 
 void ChessModel::addFigure(FigureIntf *in)
 {
-    int const begin = m_data.size() == 0 ? 0 : m_data.size() - 1;
-
-    beginInsertRows(createIndex(begin, 0), begin, begin + 1);
+    beginInsertRows(QModelIndex(), rowCount(), rowCount());
 
     m_data.append(in);
 

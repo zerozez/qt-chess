@@ -20,8 +20,7 @@ public:
         ImageRole
     };
 
-    explicit ChessModel(QObject *parent = 0);
-    ~ChessModel();
+    ChessModel(QObject *parent = 0);
 
     int rowCount(const QModelIndex & parent = QModelIndex()) const;
     bool removeRows(int row, int count, const QModelIndex &parent);

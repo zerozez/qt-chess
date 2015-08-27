@@ -47,7 +47,7 @@ Rectangle {
         Repeater {
             model: gameField.figures
 
-            Item {
+            delegate: Item {
 
                 height: chessGrid.height / 8
                 width: height
