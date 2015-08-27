@@ -14,6 +14,7 @@ import QtQuick.Dialogs 1.2
 
 Rectangle {
     id: gameField
+
     property var figures
 
     Grid {
@@ -42,22 +43,37 @@ Rectangle {
                 }
             }
         }
-    }
 
-    GridView {
-        id: chessFigures
+        Repeater {
+            model: gameField.figures
 
-        anchors.fill: parent
+            Item {
 
-        model: gameField.figures
+                height: chessGrid.height / 8
+                width: height
 
-        delegate: Item {
-                x: X - 1
-                y: Y - 1
+                x: (Y - 1) * width
+
+                y: (X - 1) * height
+
                 Image {
+                    width: parent.width
+                    height: parent.height
+
+                    anchors.fill: parent
                     source: image
                 }
+
+                MouseArea {
+                    anchors.fill: parent
+
+                    onClicked: {
+
+                        gameField.figures.removeAt(X, Y)
+                    }
+                }
             }
+        }
     }
 }
 

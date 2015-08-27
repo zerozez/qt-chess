@@ -24,14 +24,18 @@ public:
     ~ChessModel();
 
     int rowCount(const QModelIndex & parent = QModelIndex()) const;
+    bool removeRows(int row, int count, const QModelIndex &parent);
 
     QHash<int, QByteArray> roleNames() const;
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
 
     void addFigure(FigureIntf *in);
 
-    private:
-        QList<FigureIntf*>   m_data;
+public Q_SLOTS:
+    void removeAt(const uint x, const uint y);
+
+private:
+    QList<FigureIntf*>   m_data;
 };
 
 #endif // CHESSMODEL_HPP
