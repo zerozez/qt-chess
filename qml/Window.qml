@@ -30,7 +30,7 @@ ApplicationWindow {
                     text: "Start"
 
                     onClicked: {
-                        console.log("Setup board figures " + parent.width)
+                        console.log("Setup board figures ")
                         GameEngine.setupBoard()
                     }
                 }
