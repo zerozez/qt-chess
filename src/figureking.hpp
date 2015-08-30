@@ -18,8 +18,8 @@ public:
     FigureKing(const uint x = 0, const uint y = 0, Color side = White, QObject *parent = 0);
     ~FigureKing();
 
-    Q_INVOKABLE void setCastling(bool flag);
-    Q_INVOKABLE bool isCastled() const;
+    void setCastling(bool flag);
+    bool isCastled() const;
 
     QString imagePath() const;
     void moveTo(const uint &x, const uint &y);
