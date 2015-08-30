@@ -39,7 +39,7 @@ public:
     };
 
     explicit FigureIntf(QObject *parent = 0);
-    FigureIntf(const uint x, const uint y, Color side,
+    FigureIntf(const uint x, const uint y, Color side, MovePoints *point = new MovePoints(),
                QObject *parent = 0);
     virtual ~FigureIntf();
 
@@ -76,7 +76,7 @@ private:
     uint        m_yPos = 0;         /**< Current y position */
 
     Color       m_color = White;    /**< Side of 'war' */
-    MovePoints *m_points = new MovePoints();           /**< Points to move */
+    MovePoints *m_points;           /**< Points to move */
 
 };
 

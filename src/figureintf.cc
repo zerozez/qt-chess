@@ -6,12 +6,13 @@ FigureIntf::FigureIntf(QObject *parent) : QObject(parent)
 {
 }
 
-FigureIntf::FigureIntf(const uint x, const uint y, Color side,
+FigureIntf::FigureIntf(const uint x, const uint y, Color side, MovePoints *point,
                        QObject *parent)
     : QObject(parent)
     , m_xPos(x)
     , m_yPos(y)
     , m_color(side)
+    , m_points(point)
 {
 }
 
