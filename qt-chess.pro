@@ -17,7 +17,8 @@ SOURCES    += \
         src/figureking.cc \
     src/chessmodel.cc \
     src/movepoints.cc \
-    src/movevectors.cc
+    src/movevectors.cc \
+    src/figurequeen.cc
 
 HEADERS    += \
         src/gameengine.hpp \
@@ -25,7 +26,8 @@ HEADERS    += \
         src/figureking.hpp \
     src/chessmodel.hpp \
     src/movepoints.hpp \
-    src/movevectors.hpp
+    src/movevectors.hpp \
+    src/figurequeen.hpp
 
 
 LIBS       +=
