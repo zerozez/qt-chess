@@ -91,6 +91,16 @@ FigureIntf *ChessModel::getFigure(const uint x, const uint y)
     return nullptr;
 }
 
+void ChessModel::addHitSpot(const QList<QPair<uint, uint> > list)
+{
+
+}
+
+void ChessModel::rmHitSpot()
+{
+
+}
+
 void ChessModel::removeAt(const uint x, const uint y)
 {
     qDebug() << "Removing " << x << " and " << y ;

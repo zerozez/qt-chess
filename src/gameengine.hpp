@@ -41,9 +41,10 @@ private:
     ChessModel             *m_figures;  /**< Figures on the board */
 
     bool                    m_isWhite;  /**< WHo is going now */
+    FigureIntf             *m_lastClick;/**< Figure to move */
 
 private:
-    void setFigureWays();
+    void setFigureWays(FigureIntf *figure);
 
 };
 

@@ -12,6 +12,7 @@
  *      The interface class for different
  *      kind of pieces
  */
+class MovePoints;
 class FigureIntf : public QObject
 {
     Q_OBJECT
@@ -33,10 +34,12 @@ public:
     {
         Black
        ,White
+       ,HitPlace
     };
 
     explicit FigureIntf(QObject *parent = 0);
-    FigureIntf(const uint x, const uint y, Color side, QObject *parent = 0);
+    FigureIntf(const uint x, const uint y, Color side, MovePoints *points,
+               QObject *parent = 0);
     virtual ~FigureIntf();
 
     Q_INVOKABLE virtual QString imagePath() const = 0;
@@ -58,6 +61,8 @@ public:
 
     Color side() const;
 
+    MovePoints *defMoveList();
+
 Q_SIGNALS:
     void moved(uint x, uint y);
     void clicked();
@@ -65,11 +70,13 @@ Q_SIGNALS:
 protected:
     QString imgPrefix() const;
 
+    MovePoints *m_points;           /**< Points to move */
 private:
     uint        m_xPos = 0;         /**< Current x position */
     uint        m_yPos = 0;         /**< Current y position */
 
     Color       m_color = White;    /**< Side of 'war' */
+
 };
 
 #endif // FIGUREINTF_HPP

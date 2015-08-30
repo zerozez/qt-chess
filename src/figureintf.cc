@@ -1,11 +1,15 @@
+#include <movepoints.hpp>
+
 #include "figureintf.hpp"
 
 FigureIntf::FigureIntf(QObject *parent) : QObject(parent)
 {
 }
 
-FigureIntf::FigureIntf(const uint x, const uint y, Color side, QObject *parent)
+FigureIntf::FigureIntf(const uint x, const uint y, Color side, MovePoints *points,
+                       QObject *parent)
     : QObject(parent)
+    , m_points(points)
     , m_xPos(x)
     , m_yPos(y)
     , m_color(side)
@@ -20,6 +24,9 @@ void FigureIntf::moveTo(const uint &x, const uint &y)
 {
     setX(x);
     setY(y);
+
+    m_points->clear();
+    m_points->setCurrent(x, y);
 
     emit moved(x, y);
 }
@@ -52,6 +59,11 @@ uint FigureIntf::Y() const
 FigureIntf::Color FigureIntf::side() const
 {
     return m_color;
+}
+
+MovePoints *FigureIntf::defMoveList()
+{
+    return m_points;
 }
 
 QString FigureIntf::imgPrefix() const

@@ -31,6 +31,9 @@ public:
     void        addFigure(FigureIntf *in);
     FigureIntf *getFigure(const uint x, const uint y);
 
+    void addHitSpot(const QList<QPair<uint, uint> > list);
+    void rmHitSpot();
+
 public Q_SLOTS:
     void        removeAt(const uint x, const uint y);
 
