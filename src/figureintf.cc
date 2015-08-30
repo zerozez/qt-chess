@@ -37,7 +37,7 @@ void FigureIntf::moveTo(const uint &x, const uint &y)
 
 QList<QPair<uint, uint> > FigureIntf::moveList()
 {
-    return QList<QPair<uint, uint> >();
+    return m_points->moveList();
 }
 
 void FigureIntf::setX(const uint &x)

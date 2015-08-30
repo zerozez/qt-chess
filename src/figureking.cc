@@ -49,13 +49,6 @@ void FigureKing::moveTo(const uint &x, const uint &y)
     FigureIntf::moveTo(x, y);
 }
 
-QList<QPair<uint, uint> > FigureKing::moveList() const
-{
-    QList<QPair<uint, uint> > moves;
-
-    return moves;
-}
-
 bool FigureKing::isCastlingMove(uint x) const
 {
     return abs(X() - x) == 2;

@@ -57,16 +57,24 @@ void GameEngine::itemClicked(uint x, uint y)
 {
     FigureIntf* item = m_figures->getFigure(x, y);
 
-    if(m_lastClick != nullptr && item->side()
-            == FigureIntf::HitPlace)
+    if(m_lastClick != nullptr)
     {
-        m_lastClick->moveTo(x, y);
+        if (m_lastClick->moveList().indexOf(QPair<uint, uint>(x, y)) != -1)
+        {
+            m_figures->removeAt(x, y);
+            m_lastClick->moveTo(x, y);
 
-        // Clean all up
-        // next side to move
-        m_isWhite = !m_isWhite;
-        m_lastClick = nullptr;
-        m_figures->rmHitSpot();
+            // Clean all up
+            // next side to move
+            m_isWhite = !m_isWhite;
+            m_lastClick = nullptr;
+            m_figures->rmHitSpot();
+        }
+        else
+        {
+            m_lastClick = nullptr;
+            itemClicked(x, y);
+        }
     }
     // Moves order
     else if((item->side() == FigureIntf::Black) ^ m_isWhite)

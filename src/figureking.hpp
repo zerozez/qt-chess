@@ -24,8 +24,6 @@ public:
     QString imagePath() const;
     void moveTo(const uint &x, const uint &y);
 
-    QList<QPair<uint, uint> > moveList() const;
-
 Q_SIGNALS:
     void castling(uint x);
 
