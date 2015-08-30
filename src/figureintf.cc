@@ -22,7 +22,7 @@ FigureIntf::~FigureIntf()
 
 QString FigureIntf::imagePath() const
 {
-    return QString();
+    return QString("qrc:/qt-chess/img/images/point.svg");
 }
 
 void FigureIntf::moveTo(const uint &x, const uint &y)

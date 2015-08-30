@@ -18,5 +18,6 @@
         <file>images/c_wp.svg</file>
         <file>images/c_wq.svg</file>
         <file>images/c_wr.svg</file>
+        <file>images/point.svg</file>
     </qresource>
 </RCC>
