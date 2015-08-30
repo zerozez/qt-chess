@@ -36,6 +36,7 @@ public:
 
 public Q_SLOTS:
     void        removeAt(const uint x, const uint y);
+    void        movedPiece(const uint x, const uint y);
 
 private:
     QList<FigureIntf*>   m_data;

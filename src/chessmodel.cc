@@ -76,6 +76,8 @@ void ChessModel::addFigure(FigureIntf *in)
 
     m_data.append(in);
 
+    connect(in, SIGNAL(moved(uint,uint)), SLOT(movedPiece(uint,uint)));
+
     endInsertRows();
 }
 
@@ -110,5 +112,10 @@ void ChessModel::removeAt(const uint x, const uint y)
             removeRows(m_data.indexOf(item), 1, QModelIndex());
         }
     }
+}
+
+void ChessModel::movedPiece(const uint x, const uint y)
+{
+    emit dataChanged(createIndex(0,0), createIndex(rowCount(),0));
 }
 
