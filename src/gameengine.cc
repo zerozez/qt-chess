@@ -36,7 +36,6 @@ void GameEngine::setupBoard()
     //Kings
     m_figures->addFigure(new FigureKing(8, 5, FigureIntf::Black));
     m_figures->addFigure(new FigureKing(1, 5, FigureIntf::White));
-    m_figures->addFigure(new FigureKing(2, 5, FigureIntf::White));
 }
 
 void GameEngine::load()

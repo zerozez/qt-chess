@@ -5,6 +5,7 @@
 #include <QList>
 #include <QObject>
 
+#include <movepoints.hpp>
 
 /**
  * @brief The FigureIntf class
@@ -38,7 +39,7 @@ public:
     };
 
     explicit FigureIntf(QObject *parent = 0);
-    FigureIntf(const uint x, const uint y, Color side, MovePoints *points,
+    FigureIntf(const uint x, const uint y, Color side,
                QObject *parent = 0);
     virtual ~FigureIntf();
 
@@ -70,7 +71,7 @@ Q_SIGNALS:
 protected:
     QString imgPrefix() const;
 
-    MovePoints *m_points;           /**< Points to move */
+    MovePoints *m_points = new MovePoints();           /**< Points to move */
 private:
     uint        m_xPos = 0;         /**< Current x position */
     uint        m_yPos = 0;         /**< Current y position */

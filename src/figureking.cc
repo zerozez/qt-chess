@@ -4,7 +4,7 @@
 #include "figureking.hpp"
 
 FigureKing::FigureKing(const uint x, const uint y, Color side, QObject *parent)
-    : FigureIntf(x, y, side, new MovePoints(), parent)
+    : FigureIntf(x, y, side, parent)
 {
     m_points->addPoint( 0, 1);
     m_points->addPoint( 1, 1);
