@@ -80,6 +80,8 @@ void GameEngine::itemClicked(uint x, uint y)
     // Moves order
     else if((item->side() == FigureIntf::Black) ^ m_isWhite)
     {
+        item->defMoveList()->clear();
+
         setFigureWays(item);
         m_lastClick = item;
     }
