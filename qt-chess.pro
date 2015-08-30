@@ -22,6 +22,7 @@ SOURCES    += \
     src/figurebishop.cc \
     src/figurequeen.cc \
     src/figureknight.cc \
+    src/figurepawn.cc \
     src/movepawn.cc
 
 HEADERS    += \
@@ -35,6 +36,7 @@ HEADERS    += \
     src/figurebishop.hpp \
     src/figurequeen.hpp \
     src/figureknight.hpp \
+    src/figurepawn.hpp \
     src/movepawn.hpp
 
 
