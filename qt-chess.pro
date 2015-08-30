@@ -18,6 +18,7 @@ SOURCES    += \
     src/chessmodel.cc \
     src/movepoints.cc \
     src/movevectors.cc \
+    src/figurerook.cc \
     src/figurequeen.cc
 
 HEADERS    += \
@@ -27,6 +28,7 @@ HEADERS    += \
     src/chessmodel.hpp \
     src/movepoints.hpp \
     src/movevectors.hpp \
+    src/figurerook.hpp \
     src/figurequeen.hpp
 
 
