@@ -15,13 +15,17 @@ SOURCES    += \
         src/gameengine.cc \
         src/figureintf.cc \
         src/figureking.cc \
-    src/chessmodel.cc
+    src/chessmodel.cc \
+    src/movepoints.cc \
+    src/movevectors.cc
 
 HEADERS    += \
         src/gameengine.hpp \
         src/figureintf.hpp \
         src/figureking.hpp \
-    src/chessmodel.hpp
+    src/chessmodel.hpp \
+    src/movepoints.hpp \
+    src/movevectors.hpp
 
 
 LIBS       +=
