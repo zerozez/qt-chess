@@ -20,7 +20,8 @@ SOURCES    += \
     src/movevectors.cc \
     src/figurerook.cc \
     src/figurebishop.cc \
-    src/figurequeen.cc
+    src/figurequeen.cc \
+    src/figureknight.cc
 
 HEADERS    += \
         src/gameengine.hpp \
@@ -31,7 +32,8 @@ HEADERS    += \
     src/movevectors.hpp \
     src/figurerook.hpp \
     src/figurebishop.hpp \
-    src/figurequeen.hpp
+    src/figurequeen.hpp \
+    src/figureknight.hpp
 
 
 LIBS       +=
