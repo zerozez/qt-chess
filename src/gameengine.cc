@@ -6,7 +6,13 @@
 #include <QQmlContext>
 #include <QFileDialog>
 
+#include <figurerook.hpp>
 #include <figureking.hpp>
+#include <figurepawn.hpp>
+#include <figurequeen.hpp>
+#include <figureknight.hpp>
+#include <figurebishop.hpp>
+
 #include <chessmodel.hpp>
 
 #include "gameengine.hpp"
@@ -29,13 +35,35 @@ GameEngine::~GameEngine()
 
 void GameEngine::setupBoard()
 {
-    // Rookes
 
-    //bishops
+    for(int row = 0; row < 2; row++)
+    {
+        FigureIntf::Color color = row == 0 ? FigureIntf::Black : FigureIntf::White;
+        int place = 8 - 7 * row;
 
-    //Kings
-    m_figures->addFigure(new FigureKing(8, 5, FigureIntf::Black));
-    m_figures->addFigure(new FigureKing(1, 5, FigureIntf::White));
+        // Pawns
+        for (int count = 1; count < 9; count++)
+            m_figures->addFigure(new FigurePawn(place + (row == 0 ? -1 : 1), count,
+                                                color));
+
+        // Rooks
+        m_figures->addFigure(new FigureRook(place, 1, color));
+        m_figures->addFigure(new FigureRook(place, 8, color));
+
+        // Bishops
+        m_figures->addFigure(new FigureBishop(place, 3, color));
+        m_figures->addFigure(new FigureBishop(place, 6, color));
+
+        // Knights
+        m_figures->addFigure(new FigureKnight(place, 2, color));
+        m_figures->addFigure(new FigureKnight(place, 7, color));
+
+        // Queen
+        m_figures->addFigure(new FigureQueen(place, 4, color));
+
+        // King
+        m_figures->addFigure(new FigureKing(place, 5, color));
+    }
 }
 
 void GameEngine::load()
