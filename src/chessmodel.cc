@@ -126,6 +126,9 @@ void ChessModel::removeAt(const uint x, const uint y)
 
 void ChessModel::movedPiece(const uint x, const uint y)
 {
+    Q_UNUSED(x)
+    Q_UNUSED(y)
+
     emit dataChanged(createIndex(0,0), createIndex(rowCount(),0));
 }
 
