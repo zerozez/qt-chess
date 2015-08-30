@@ -71,12 +71,12 @@ Q_SIGNALS:
 protected:
     QString imgPrefix() const;
 
-    MovePoints *m_points = new MovePoints();           /**< Points to move */
 private:
     uint        m_xPos = 0;         /**< Current x position */
     uint        m_yPos = 0;         /**< Current y position */
 
     Color       m_color = White;    /**< Side of 'war' */
+    MovePoints *m_points = new MovePoints();           /**< Points to move */
 
 };
 
