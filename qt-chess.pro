@@ -19,6 +19,7 @@ SOURCES    += \
     src/movepoints.cc \
     src/movevectors.cc \
     src/figurerook.cc \
+    src/figurebishop.cc \
     src/figurequeen.cc
 
 HEADERS    += \
@@ -29,6 +30,7 @@ HEADERS    += \
     src/movepoints.hpp \
     src/movevectors.hpp \
     src/figurerook.hpp \
+    src/figurebishop.hpp \
     src/figurequeen.hpp
 
 
