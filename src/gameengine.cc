@@ -70,9 +70,10 @@ void GameEngine::itemClicked(uint x, uint y)
             m_lastClick = nullptr;
             m_figures->rmHitSpot();
         }
-        else
+        else if( m_lastClick->side() == item->side())
         {
             m_lastClick = nullptr;
+            m_figures->rmHitSpot();
             itemClicked(x, y);
         }
     }
