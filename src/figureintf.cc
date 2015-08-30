@@ -19,6 +19,11 @@ FigureIntf::~FigureIntf()
 {
 }
 
+QString FigureIntf::imagePath() const
+{
+    return QString();
+}
+
 void FigureIntf::moveTo(const uint &x, const uint &y)
 {
     setX(x);

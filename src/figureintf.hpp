@@ -43,7 +43,7 @@ public:
                QObject *parent = 0);
     virtual ~FigureIntf();
 
-    Q_INVOKABLE virtual QString imagePath() const = 0;
+    Q_INVOKABLE virtual QString imagePath() const;
     Q_INVOKABLE virtual void    moveTo(const uint &x, const uint &y);
 
     /**

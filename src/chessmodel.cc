@@ -95,12 +95,22 @@ FigureIntf *ChessModel::getFigure(const uint x, const uint y)
 
 void ChessModel::addHitSpot(const QList<QPair<uint, uint> > list)
 {
+    QListIterator<QPair<uint, uint> > iterList(list);
 
+    while (iterList.hasNext())
+    {
+        QPair<uint, uint> point = iterList.next();
+
+        addFigure(new FigureIntf(point.first, point.second, FigureIntf::HitPlace));
+    }
 }
 
 void ChessModel::rmHitSpot()
 {
-
+    foreach (FigureIntf *figure, m_data) {
+        if(figure->side() == FigureIntf::HitPlace)
+            removeRows(m_data.indexOf(figure), 1, QModelIndex());
+    }
 }
 
 void ChessModel::removeAt(const uint x, const uint y)

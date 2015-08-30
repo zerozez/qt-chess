@@ -29,7 +29,7 @@ bool MovePoints::isEmpty() const
 
 void MovePoints::clear()
 {
-    m_moveList.clear();
+    m_currentList.clear();
 }
 
 void MovePoints::setCurrent(uint x, uint y)
