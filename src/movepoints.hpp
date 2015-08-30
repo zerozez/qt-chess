@@ -25,7 +25,7 @@ public:
     QList<QPair<uint, uint> > moveList() const;
 
     bool isEmpty() const;
-    void clear();
+    virtual void clear();
 
     virtual void setCurrent(uint x, uint y);
     virtual void append(const QPair<uint, uint> &point, PlaceType type);

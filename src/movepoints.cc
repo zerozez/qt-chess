@@ -43,7 +43,7 @@ void MovePoints::setCurrent(uint x, uint y)
         QPair<int, int> step = stepIter.next();
 
         uint newX = x + step.first;
-        uint newY = y - step.second;
+        uint newY = y + step.second;
 
         if(newX == 0 || newX > 8 ||
            newY == 0 || newY > 8 )
@@ -60,6 +60,7 @@ void MovePoints::append(const QPair<uint, uint> &point, MovePoints::PlaceType ty
     case Enemy:
         if(m_moveList.indexOf(point) != -1)
             m_currentList.append(point);
+        break;
     default:
         break;
     }
