@@ -14,6 +14,7 @@
 GameEngine::GameEngine(QObject *parent)
     :QObject(parent)
     ,m_figures(new ChessModel(this))
+    ,m_isWhite(true)
 {
     qmlRegisterUncreatableType<FigureIntf>("com.znocpmp.chess", 1, 0, "Figure", "");
     qmlRegisterType<ChessModel>("com.znocpmp.chess", 1, 0, "ChessModel");
@@ -47,4 +48,12 @@ void GameEngine::move()
 QObject *GameEngine::figures()
 {
     return m_figures;
+}
+
+void GameEngine::itemClicked(uint x, uint y)
+{
+}
+
+void GameEngine::setFigureWays()
+{
 }

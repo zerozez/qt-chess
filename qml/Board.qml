@@ -17,6 +17,8 @@ Rectangle {
 
     property var figures
 
+    signal figureClicked(var x, var y)
+
     Grid {
         id: chessGrid
         rows: 8;
@@ -67,10 +69,7 @@ Rectangle {
                 MouseArea {
                     anchors.fill: parent
 
-                    onClicked: {
-
-                        gameField.figures.removeAt(X, Y)
-                    }
+                    onClicked: gameField.figureClicked(X, Y)
                 }
             }
         }

@@ -73,8 +73,9 @@ ApplicationWindow {
             anchors.leftMargin: 5
             anchors.bottomMargin: 5
 
-
+            onFigureClicked: GameEngine.itemClicked(x, y)
         }
+
         Component.onCompleted: {
             console.log("Loaded")
             board1.figures = GameEngine.figures()

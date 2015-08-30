@@ -29,6 +29,7 @@ public:
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
 
     void addFigure(FigureIntf *in);
+    FigureIntf *getFigure(const uint x, const uint y);
 
 public Q_SLOTS:
     void removeAt(const uint x, const uint y);

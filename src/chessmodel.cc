@@ -79,6 +79,11 @@ void ChessModel::addFigure(FigureIntf *in)
     endInsertRows();
 }
 
+FigureIntf *ChessModel::getFigure(const uint x, const uint y)
+{
+    return nullptr;
+}
+
 void ChessModel::removeAt(const uint x, const uint y)
 {
     qDebug() << "Removing " << x << " and " << y ;

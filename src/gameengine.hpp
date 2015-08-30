@@ -33,9 +33,18 @@ public:
 
     Q_INVOKABLE QObject *figures();
 
+public Q_SLOTS:
+    void itemClicked(uint x, uint y);
+
 private:
     QMap<int, QString>      m_gHistory; /**< Move history*/
     ChessModel             *m_figures;  /**< Figures on the board */
+
+    bool                    m_isWhite;  /**< WHo is going now */
+
+private:
+    void setFigureWays();
+
 };
 
 #endif // GAMEENGINE_HPP
