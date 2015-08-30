@@ -52,8 +52,13 @@ QObject *GameEngine::figures()
 
 void GameEngine::itemClicked(uint x, uint y)
 {
+    FigureIntf* item = m_figures->getFigure(x, y);
+
+    if(item->side() == FigureIntf::Black ^ m_isWhite)
+        setFigureWays();
 }
 
 void GameEngine::setFigureWays()
 {
+    qDebug() << "Setting up figures";
 }

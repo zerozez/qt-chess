@@ -81,6 +81,13 @@ void ChessModel::addFigure(FigureIntf *in)
 
 FigureIntf *ChessModel::getFigure(const uint x, const uint y)
 {
+    foreach (FigureIntf *item, m_data) {
+        if(item->X() == x && item->Y() == y)
+            return item;
+    }
+
+    // this case (with existing qml) shouldn't happend
+    // and we do that only for ensurence
     return nullptr;
 }
 
