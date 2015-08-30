@@ -26,13 +26,13 @@ public:
     bool removeRows(int row, int count, const QModelIndex &parent);
 
     QHash<int, QByteArray> roleNames() const;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    QVariant    data(const QModelIndex & index, int role = Qt::DisplayRole) const;
 
-    void addFigure(FigureIntf *in);
+    void        addFigure(FigureIntf *in);
     FigureIntf *getFigure(const uint x, const uint y);
 
 public Q_SLOTS:
-    void removeAt(const uint x, const uint y);
+    void        removeAt(const uint x, const uint y);
 
 private:
     QList<FigureIntf*>   m_data;
