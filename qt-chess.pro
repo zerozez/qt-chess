@@ -21,7 +21,8 @@ SOURCES    += \
     src/figurerook.cc \
     src/figurebishop.cc \
     src/figurequeen.cc \
-    src/figureknight.cc
+    src/figureknight.cc \
+    src/movepawn.cc
 
 HEADERS    += \
         src/gameengine.hpp \
@@ -33,7 +34,8 @@ HEADERS    += \
     src/figurerook.hpp \
     src/figurebishop.hpp \
     src/figurequeen.hpp \
-    src/figureknight.hpp
+    src/figureknight.hpp \
+    src/movepawn.hpp
 
 
 LIBS       +=
