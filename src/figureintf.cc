@@ -49,6 +49,11 @@ uint FigureIntf::Y() const
     return m_yPos;
 }
 
+FigureIntf::Color FigureIntf::side() const
+{
+    return m_color;
+}
+
 QString FigureIntf::imgPrefix() const
 {
     QString out("qrc:/qt-chess/img/images/");

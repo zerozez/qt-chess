@@ -56,6 +56,8 @@ public:
     void setY(const uint &y);
     uint Y() const;
 
+    Color side() const;
+
 Q_SIGNALS:
     void moved(uint x, uint y);
     void clicked();
