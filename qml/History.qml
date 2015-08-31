@@ -12,40 +12,25 @@ import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.2
 
-Rectangle {
+ListView {
     id: historyNavigation
 
-    ColumnLayout {
-        id: mainLayout
+    anchors.fill: parent
 
-        ListView {
-            anchors.fill: parent
+    delegate: Rectangle{
+        id: row
+
+        Text {
+            id: number
+            text: historyNavigation.model.Number
         }
-
-        RowLayout {
-            id: buttonLayout
-
-            anchors.fill: parent
-            spacing: 0
-            Button {
-                id: prev
-                enabled: false
-
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                text: "Prev"
-            }
-
-            Button {
-                id: next
-                enabled: true
-
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                text: "Next"
-            }
+        Text {
+            id: moveW
+            text: historyNavigation.model.RecordW
+        }
+        Text {
+            id: moveB
+            text: historyNavigation.model.RecordB
         }
     }
 }

@@ -23,7 +23,8 @@ SOURCES    += \
     src/figurequeen.cc \
     src/figureknight.cc \
     src/figurepawn.cc \
-    src/movepawn.cc
+    src/movepawn.cc \
+    src/historymodel.cc
 
 HEADERS    += \
         src/gameengine.hpp \
@@ -37,7 +38,8 @@ HEADERS    += \
     src/figurequeen.hpp \
     src/figureknight.hpp \
     src/figurepawn.hpp \
-    src/movepawn.hpp
+    src/movepawn.hpp \
+    src/historymodel.hpp
 
 
 LIBS       +=

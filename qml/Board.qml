@@ -15,14 +15,16 @@ import QtQuick.Dialogs 1.2
 Rectangle {
     id: gameField
 
+    width: 100
+    height: 100
     property var figures
 
     signal figureClicked(var x, var y)
 
     Grid {
         id: chessGrid
-        rows: 8;
-        columns: 8;
+        rows: 8
+        columns: 8
         spacing: 0
 
         anchors.fill: parent

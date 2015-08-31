@@ -11,76 +11,87 @@ ApplicationWindow {
     visible: true
 
     ColumnLayout {
+        id: columnLayout1
+        anchors.rightMargin: 0
+        anchors.bottomMargin: 0
+        anchors.leftMargin: 0
+        anchors.topMargin: 0
         anchors.fill: parent
 
-        Rectangle {
-            height: 30
-            Layout.fillWidth: true
-
-            RowLayout {
-                anchors.fill: parent
-
-                ToolButton {
-                    id: startButton
-                    Layout.fillHeight: true
-
-                    height: parent.height
-                    width: height
-
-                    text: "Start"
-
-                    onClicked: {
-                        console.log("Setup board figures ")
-                        GameEngine.setupBoard()
-                    }
-                }
-
-                ToolButton {
-                    id: loadButton
-                    Layout.fillHeight: true
-
-                    height: parent.height
-                    width: height
-
-                    text: "Load"
-
-                    onClicked: {
-                        console.log("Clicked load button")
-                        GameEngine.load
-                    }
-                }
-
-                ToolButton {
-                    id: exitButton
-                    Layout.fillHeight: true
-
-                    height: parent.height
-                    width: height
-
-                    text: "Exit"
-
-                    onClicked: Qt.quit()
-                }
-            }
-        }
-
-        Board {
-            id: board1
+        RowLayout {
+            id: rowLayout1
+            x: 311
+            y: 56
+            width: 100
+            height: 100
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-            anchors.topMargin: 5
-            anchors.leftMargin: 5
-            anchors.bottomMargin: 5
+            Button {
+                id: button1
+                x: 145
+                y: 93
+                text: "Start"
+                onClicked: {
+                        console.log("Setup board figures ")
+                        GameEngine.setupBoard()
+                }
 
-            onFigureClicked: GameEngine.itemClicked(x, y)
+            }
+
+            Button {
+                id: button2
+                x: 243
+                y: 93
+                text: "Load"
+                onClicked: {
+                    console.log("Clicked load button")
+                    dialog.visible = true
+
+                    GameEngine.load(dialog.fileUrl)
+                }
+
+
+               GameFDialog {
+                   id: dialog
+               }
+            }
+
+            Button {
+                id: button3
+                x: 345
+                y: 93
+                text: "exit"
+                onClicked: Qt.quit()
+            }
+        }
+
+        RowLayout {
+            id: rowLayout2
+            x: 333
+            y: 222
+            width: 100
+            height: 100
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+
+
+            Board {
+                id: board1
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                anchors.fill: parent
+
+                Layout.column: 0;
+                onFigureClicked: GameEngine.itemClicked(x, y)
+            }
         }
 
         Component.onCompleted: {
-            console.log("Loaded")
-            board1.figures = GameEngine.figures()
-        }
-
+             console.log("Loaded")
+             board1.figures = GameEngine.figures()
+             //history1.model = GameEngine.history()
+         }
     }
 }
 

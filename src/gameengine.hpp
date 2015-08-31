@@ -18,6 +18,7 @@
  */
 class ChessModel;
 class FigureIntf;
+class HistoryModel;
 class GameEngine : public QObject
 {
     Q_OBJECT
@@ -32,12 +33,13 @@ public:
     Q_INVOKABLE void move();
 
     Q_INVOKABLE QObject *figures();
+    Q_INVOKABLE QObject *history();
 
 public Q_SLOTS:
     void itemClicked(uint x, uint y);
 
 private:
-    QMap<int, QString>      m_gHistory; /**< Move history*/
+    HistoryModel           *m_history; /**< Move history*/
     ChessModel             *m_figures;  /**< Figures on the board */
 
     bool                    m_isWhite;  /**< WHo is going now */

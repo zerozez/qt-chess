@@ -89,7 +89,7 @@ FigureIntf *ChessModel::getFigure(const uint x, const uint y)
     }
 
     // this case (with existing qml) shouldn't happend
-    // and we do that only for ensurence
+    // and we do that only for ensurance
     return nullptr;
 }
 

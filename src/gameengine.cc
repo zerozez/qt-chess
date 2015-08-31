@@ -14,6 +14,7 @@
 #include <figurebishop.hpp>
 
 #include <chessmodel.hpp>
+#include <historymodel.hpp>
 
 #include "gameengine.hpp"
 #include "movepoints.hpp"
@@ -21,6 +22,7 @@
 
 GameEngine::GameEngine(QObject *parent)
     :QObject(parent)
+    ,m_history(new HistoryModel(this))
     ,m_figures(new ChessModel(this))
     ,m_isWhite(true)
     ,m_lastClick(nullptr)
@@ -79,6 +81,11 @@ void GameEngine::move()
 QObject *GameEngine::figures()
 {
     return m_figures;
+}
+
+QObject *GameEngine::history()
+{
+    return m_history;
 }
 
 void GameEngine::itemClicked(uint x, uint y)
