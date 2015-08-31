@@ -124,6 +124,11 @@ void ChessModel::removeAt(const uint x, const uint y)
     }
 }
 
+void ChessModel::erase()
+{
+    removeRows(0, rowCount(), QModelIndex());
+}
+
 void ChessModel::movedPiece(const uint x, const uint y)
 {
     Q_UNUSED(x)

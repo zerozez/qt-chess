@@ -29,6 +29,8 @@ public:
     virtual ~GameEngine();
 
     Q_INVOKABLE void setupBoard();
+    Q_INVOKABLE void clean();
+    Q_INVOKABLE void save();
     Q_INVOKABLE void load();
     Q_INVOKABLE void move();
 

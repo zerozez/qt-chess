@@ -36,6 +36,7 @@ public:
 
 public Q_SLOTS:
     void        removeAt(const uint x, const uint y);
+    void        erase();
     void        movedPiece(const uint x, const uint y);
 
 private:

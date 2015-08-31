@@ -68,6 +68,16 @@ void GameEngine::setupBoard()
     }
 }
 
+void GameEngine::clean()
+{
+    m_figures->erase();
+}
+
+void GameEngine::save()
+{
+
+}
+
 void GameEngine::load()
 {
 
