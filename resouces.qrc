@@ -4,6 +4,7 @@
         <file>qml/Window.qml</file>
         <file>qml/ChessFigure.qml</file>
         <file>qml/History.qml</file>
+        <file>qml/GameFDialog.qml</file>
     </qresource>
     <qresource prefix="/qt-chess/img">
         <file>images/c_bb.svg</file>
