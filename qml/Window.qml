@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.2
-import QtQuick.Dialogs 1.2
 
 import com.znocpmp.chess 1.0
 
@@ -92,7 +91,9 @@ ApplicationWindow {
         }
 
         Component.onCompleted: {
-             console.log("Loaded")
+             if(debug) {
+                 console.debug("Loaded")
+             }
              board1.figures = GameEngine.figures()
              //history1.model = GameEngine.history()
          }
@@ -105,7 +106,9 @@ ApplicationWindow {
 
                     text: "Start"
                     onClicked: {
-                        console.log("Setup board figures ")
+                        if(debug) {
+                            console.debug("Setup board figures ")
+                        }
                         GameEngine.setupBoard()
                         columnLayout1.state = "game"
                     }
@@ -115,9 +118,10 @@ ApplicationWindow {
                     text: "Load"
 
                     onClicked: {
-                        console.log("Clicked load button")
+                        if(debug) {
+                            console.debug("Clicked load button")
+                        }
                         dialog.visible = true
-
                     }
                 }
             },
@@ -129,7 +133,9 @@ ApplicationWindow {
 
                     text: "Stop"
                     onClicked: {
-                        console.log("Stop game")
+                        if(debug) {
+                            console.debug("Stop game")
+                        }
                         GameEngine.clean()
                         columnLayout1.state = "init"
                     }
@@ -139,7 +145,9 @@ ApplicationWindow {
                     text: "Save"
 
                     onClicked: {
-                        console.log("save button")
+                        if(debug) {
+                            console.debug("save button")
+                        }
                         GameEngine.save("")
                         saveDialog.visible = true
                     }
