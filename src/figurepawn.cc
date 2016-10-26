@@ -3,7 +3,7 @@
 #include "figurepawn.hpp"
 
 FigurePawn::FigurePawn(const uint x, const uint y, Color side, QObject *parent)
-    : FigureIntf(x, y, side, new MovePawn(), parent) {
+    : FigureIntf(x, y, side, new MovePawn(this), parent) {
   // This figure has a little different kind of moves
   MovePawn *points = qobject_cast<MovePawn *>(defMoveList());
 

@@ -4,7 +4,7 @@
 
 FigureKnight::FigureKnight(const uint x, const uint y, FigureIntf::Color side,
                            QObject *parent)
-    : FigureIntf(x, y, side, new MovePoints(), parent) {
+    : FigureIntf(x, y, side, new MovePoints(this), parent) {
   MovePoints *points = defMoveList();
 
   points->addPoint(2, 1);
