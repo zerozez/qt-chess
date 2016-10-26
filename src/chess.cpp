@@ -5,26 +5,25 @@
  */
 
 #include <QApplication>
-#include <QQmlContext>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 #include <gameengine.hpp>
 
 /// Default programm running
-int main(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
+int main(int argc, char* argv[]) {
+  QApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
+  QQmlApplicationEngine engine;
 
 #ifdef QT_DEBUG
-    engine.rootContext()->setContextProperty("debug", true);
+  engine.rootContext()->setContextProperty("debug", true);
 #else
-    engine.rootContext()->setContextProperty("debug", false);
+  engine.rootContext()->setContextProperty("debug", false);
 #endif
 
-    engine.rootContext()->setContextProperty("GameEngine", new GameEngine);
-    engine.load(QUrl(QStringLiteral("qrc:/qt-chess/qml/Window.qml")));
+  engine.rootContext()->setContextProperty("GameEngine", new GameEngine);
+  engine.load(QUrl(QStringLiteral("qrc:/qt-chess/qml/Window.qml")));
 
-    return app.exec();
+  return app.exec();
 }

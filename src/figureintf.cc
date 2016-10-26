@@ -2,83 +2,63 @@
 
 #include "figureintf.hpp"
 
-FigureIntf::FigureIntf(QObject *parent) : QObject(parent)
-{
+FigureIntf::FigureIntf(QObject *parent) : QObject(parent) {}
+
+FigureIntf::FigureIntf(const uint x, const uint y, Color side,
+                       MovePoints *point, QObject *parent)
+    : QObject(parent), m_xPos(x), m_yPos(y), m_color(side), m_points(point) {}
+
+FigureIntf::~FigureIntf() {}
+
+QString FigureIntf::imagePath() const {
+  return QString("qrc:/qt-chess/img/images/point.svg");
 }
 
-FigureIntf::FigureIntf(const uint x, const uint y, Color side, MovePoints *point,
-                       QObject *parent)
-    : QObject(parent)
-    , m_xPos(x)
-    , m_yPos(y)
-    , m_color(side)
-    , m_points(point)
-{
+void FigureIntf::moveTo(const uint &x, const uint &y) {
+  setX(x);
+  setY(y);
+
+  m_points->clear();
+  m_points->setCurrent(x, y);
+
+  emit moved(x, y);
 }
 
-FigureIntf::~FigureIntf()
-{
+QList<QPair<uint, uint> > FigureIntf::moveList() {
+  return m_points->moveList();
 }
 
-QString FigureIntf::imagePath() const
-{
-    return QString("qrc:/qt-chess/img/images/point.svg");
+void FigureIntf::setX(const uint &x) {
+  m_xPos = x;
 }
 
-void FigureIntf::moveTo(const uint &x, const uint &y)
-{
-    setX(x);
-    setY(y);
-
-    m_points->clear();
-    m_points->setCurrent(x, y);
-
-    emit moved(x, y);
+uint FigureIntf::X() const {
+  return m_xPos;
 }
 
-QList<QPair<uint, uint> > FigureIntf::moveList()
-{
-    return m_points->moveList();
+void FigureIntf::setY(const uint &y) {
+  m_yPos = y;
 }
 
-void FigureIntf::setX(const uint &x)
-{
-    m_xPos = x;
+uint FigureIntf::Y() const {
+  return m_yPos;
 }
 
-uint FigureIntf::X() const
-{
-    return m_xPos;
+FigureIntf::Color FigureIntf::side() const {
+  return m_color;
 }
 
-void FigureIntf::setY(const uint &y)
-{
-    m_yPos = y;
+MovePoints *FigureIntf::defMoveList() {
+  return m_points;
 }
 
-uint FigureIntf::Y() const
-{
-    return m_yPos;
-}
+QString FigureIntf::imgPrefix() const {
+  QString out("qrc:/qt-chess/img/images/");
 
-FigureIntf::Color FigureIntf::side() const
-{
-    return m_color;
-}
+  if (m_color == White)
+    out += "c_w";
+  else
+    out += "c_b";
 
-MovePoints *FigureIntf::defMoveList()
-{
-    return m_points;
-}
-
-QString FigureIntf::imgPrefix() const
-{
-    QString out("qrc:/qt-chess/img/images/");
-
-    if(m_color == White)
-        out += "c_w";
-    else
-        out += "c_b";
-
-    return out;
+  return out;
 }
