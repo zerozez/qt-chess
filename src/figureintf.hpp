@@ -4,6 +4,7 @@
 #include <QList>
 #include <QObject>
 #include <QPair>
+#include <QSharedPointer>
 
 #include <movepoints.hpp>
 
@@ -69,7 +70,7 @@ class FigureIntf : public QObject {
   uint m_yPos = 0; /**< Current y position */
 
   Color m_color = White; /**< Side of 'war' */
-  MovePoints *m_points;  /**< Points to move */
+  QSharedPointer<MovePoints> m_points;  /**< Points to move */
 };
 
 #endif  // FIGUREINTF_HPP

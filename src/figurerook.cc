@@ -4,7 +4,7 @@
 
 FigureRook::FigureRook(const uint x, const uint y, FigureIntf::Color side,
                        QObject *parent)
-    : FigureIntf(x, y, side, new MoveVectors(this), parent) {
+    : FigureIntf(x, y, side, new MoveVectors(), parent) {
   MoveVectors *vectors = qobject_cast<MoveVectors *>(defMoveList());
 
   vectors->addPoint(1, 0);

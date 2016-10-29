@@ -49,7 +49,7 @@ FigureIntf::Color FigureIntf::side() const {
 }
 
 MovePoints *FigureIntf::defMoveList() {
-  return m_points;
+  return m_points.data();
 }
 
 QString FigureIntf::imgPrefix() const {
