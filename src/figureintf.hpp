@@ -6,7 +6,7 @@
 #include <QPair>
 #include <QSharedPointer>
 
-#include <movepoints.hpp>
+#include <src\movepoints.hpp>
 
 /**
  * @brief The FigureIntf class

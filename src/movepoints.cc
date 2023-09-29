@@ -1,6 +1,6 @@
 #include <QPair>
 
-#include "movepoints.hpp"
+#include "src\movepoints.hpp"
 
 MovePoints::MovePoints(QObject *parent) : QObject(parent) {}
 

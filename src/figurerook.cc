@@ -1,6 +1,6 @@
-#include <movevectors.hpp>
+#include <src\movevectors.hpp>
 
-#include "figurerook.hpp"
+#include "src\figurerook.hpp"
 
 FigureRook::FigureRook(const uint x, const uint y, FigureIntf::Color side,
                        QObject *parent)

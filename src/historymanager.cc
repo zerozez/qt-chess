@@ -1,4 +1,4 @@
-#include "historymanager.hpp"
+#include "src\historymanager.hpp"
 
 HistoryManager::HistoryManager(QObject *parent) : QObject(parent) {}
 

@@ -1,6 +1,6 @@
-#include <movepoints.hpp>
+#include <src\movepoints.hpp>
 
-#include "figureintf.hpp"
+#include "src\figureintf.hpp"
 
 FigureIntf::FigureIntf(QObject *parent) : QObject(parent) {}
 

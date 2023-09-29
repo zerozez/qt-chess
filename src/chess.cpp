@@ -8,7 +8,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include <gameengine.hpp>
+#include <src\gameengine.hpp>
 
 /// Default programm running
 int main(int argc, char* argv[]) {

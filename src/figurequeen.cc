@@ -1,6 +1,6 @@
-#include <movevectors.hpp>
+#include <src\movevectors.hpp>
 
-#include "figurequeen.hpp"
+#include "src\figurequeen.hpp"
 
 FigureQueen::FigureQueen(const uint x, const uint y, FigureIntf::Color side,
                          QObject *parent)

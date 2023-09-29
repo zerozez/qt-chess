@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QPair>
 
-#include "movepoints.hpp"
+#include "src\movepoints.hpp"
 
 class MoveVectors : public MovePoints {
   Q_OBJECT

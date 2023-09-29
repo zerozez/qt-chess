@@ -1,6 +1,6 @@
-#include <movepawn.hpp>
+#include <src\movepawn.hpp>
 
-#include "figurepawn.hpp"
+#include "src\figurepawn.hpp"
 
 FigurePawn::FigurePawn(const uint x, const uint y, Color side, QObject *parent)
     : FigureIntf(x, y, side, new MovePawn(), parent) {

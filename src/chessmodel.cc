@@ -1,7 +1,7 @@
 
-#include <figureintf.hpp>
+#include <src\figureintf.hpp>
 
-#include "chessmodel.hpp"
+#include "src\chessmodel.hpp"
 
 #include <QDebug>
 
