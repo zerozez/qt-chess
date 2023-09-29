@@ -1,6 +1,6 @@
-#include <movepoints.hpp>
+#include <src\movepoints.hpp>
 
-#include "figureknight.hpp"
+#include "src\figureknight.hpp"
 
 FigureKnight::FigureKnight(const uint x, const uint y, FigureIntf::Color side,
                            QObject *parent)

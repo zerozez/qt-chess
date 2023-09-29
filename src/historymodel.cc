@@ -1,6 +1,7 @@
 #include <regex>
+#include <QRegExp>
 
-#include "historymodel.hpp"
+#include "src\historymodel.hpp"
 
 HistoryModel::HistoryModel(QObject *parent) : QAbstractListModel(parent) {
   m_header.append("White");
@@ -87,7 +88,7 @@ QByteArray HistoryModel::save() const {
 void HistoryModel::load(QByteArray) {}
 
 void HistoryModel::goForward() {
-  if (m_data.size() > m_pos - 1) m_pos++;
+  if ((long) m_data.size() > (long) m_pos - 1) m_pos++;
 
   QRegExp exp(s_pattern);
 

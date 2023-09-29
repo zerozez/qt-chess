@@ -1,8 +1,8 @@
 #include <cmath>
 
-#include <movepoints.hpp>
+#include <src\movepoints.hpp>
 
-#include "figureking.hpp"
+#include "src\figureking.hpp"
 
 FigureKing::FigureKing(const uint x, const uint y, Color side, QObject *parent)
     : FigureIntf(x, y, side, new MovePoints(), parent) {
@@ -44,5 +44,5 @@ void FigureKing::moveTo(const uint &x, const uint &y) {
 }
 
 bool FigureKing::isCastlingMove(uint x) const {
-  return abs(X() - x) == 2;
+  return (abs((long) X() - (long) x) == 2);
 }

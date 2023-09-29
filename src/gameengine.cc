@@ -6,18 +6,18 @@
 #include <QQmlEngine>
 #include <QtQml>
 
-#include <figurebishop.hpp>
-#include <figureking.hpp>
-#include <figureknight.hpp>
-#include <figurepawn.hpp>
-#include <figurequeen.hpp>
-#include <figurerook.hpp>
+#include <src\figurebishop.hpp>
+#include <src\figureking.hpp>
+#include <src\figureknight.hpp>
+#include <src\figurepawn.hpp>
+#include <src\figurequeen.hpp>
+#include <src\figurerook.hpp>
 
-#include <chessmodel.hpp>
-#include <historymodel.hpp>
+#include <src\chessmodel.hpp>
+#include <src\historymodel.hpp>
 
-#include "gameengine.hpp"
-#include "movepoints.hpp"
+#include "src\gameengine.hpp"
+#include "src\movepoints.hpp"
 
 GameEngine::GameEngine(QObject *parent)
     : QObject(parent),

@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include "figureintf.hpp"
+#include "src\figureintf.hpp"
 
 /**
  * @brief The FigureBishop class

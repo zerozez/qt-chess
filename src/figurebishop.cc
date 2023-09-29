@@ -1,6 +1,6 @@
-#include <movevectors.hpp>
+#include <src\movevectors.hpp>
 
-#include "figurebishop.hpp"
+#include "src\figurebishop.hpp"
 
 FigureBishop::FigureBishop(const uint x, const uint y, FigureIntf::Color side,
                            QObject *parent)

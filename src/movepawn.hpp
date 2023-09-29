@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include "movepoints.hpp"
+#include "src\movepoints.hpp"
 
 /**
  * @brief The MovePawn class
